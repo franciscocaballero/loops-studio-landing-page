@@ -24,7 +24,6 @@
 
        ul {
            color: var(--clr-white);
-           //    display: flex;
            list-style: none;
        }
    }
@@ -100,10 +99,12 @@
        justify-content: center;
        padding: 3rem 0;
 
+
+
        h1 {
            color: var(--clr-white);
            border: 0.2rem solid var(--clr-white);
-           font-size: 3.8rem;
+           font-size: 4rem;
            padding: 2rem;
            text-transform: uppercase;
        }
@@ -113,11 +114,24 @@
        }
    }
 
+   //    .color-overlay {
+   //        position: absolute;
+   //        top: 0;
+   //        left: 0;
+   //        width: 100%;
+   //        height: 100%;
+   //        background-color: black;
+   //        opacity: 0.6;
+   //        min-height: 64vh;
+   //    }
+
    .header-content {
        display: flex;
        flex-direction: column;
        justify-content: center;
        min-height: 64vh;
+
+
    }
 
    .heading-box {
@@ -138,10 +152,7 @@
        flex-direction: column;
        justify-content: center;
        align-items: center;
-
    }
-
-
 
    .content {
        .info-card {
@@ -218,13 +229,80 @@
        flex-direction: row;
        justify-content: center;
        align-items: center;
+   }
 
-       //    .item {
-       //        min-height: 100%;
-       //    }
+   @media (min-width: 40rem) {
 
-       li {
-           //    width: 100%;
-           //    padding: .5rem;
+       header {
+           background: url('../../images/desktop/image-hero.jpg') no-repeat center top / cover;
+
+           .icon-hamburger {
+               display: none;
+           }
+
+           ul {
+               display: flex;
+           }
+
+           h1 {
+               font-size: 6rem;
+               max-width: 47rem;
+           }
        }
+
+       nav {
+
+           ul>*+* {
+               margin-left: 2rem;
+
+           }
+       }
+
+
+       .header-content {
+           min-height: 33vh;
+       }
+
+       .split {
+
+           flex-direction: row;
+           //    justify-content: center;
+           //    align-items: center;
+
+           border: 3px solid yellow;
+       }
+
+       .split *> {
+           flex-basis: 100%;
+       }
+
+       .about-section {
+           position: relative;
+
+           img {
+               align-self: flex-start;
+               //    align-items: 
+           }
+       }
+
+       .heading-box {
+           border: 3px solid green;
+       }
+
+       .content {
+           padding: 4rem;
+           //    z-index: 1;
+           border: 3px solid red;
+           position: absolute;
+           width: 700px;
+
+           background-color: var(--clr-white);
+       }
+
+       footer {
+           flex-direction: row;
+           //    justify-content: center;
+           //    align-items: center;
+       }
+
    }
