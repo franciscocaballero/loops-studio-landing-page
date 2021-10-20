@@ -233,6 +233,11 @@
 
    @media (min-width: 40rem) {
 
+       h2,
+       p {
+           text-align: left;
+       }
+
        header {
            background: url('../../images/desktop/image-hero.jpg') no-repeat center top / cover;
 
@@ -268,8 +273,8 @@
            flex-direction: row;
            //    justify-content: center;
            //    align-items: center;
-
-           border: 3px solid yellow;
+           justify-content: flex-start;
+           //    border: 3px solid yellow;
        }
 
        .split *> {
@@ -277,32 +282,26 @@
        }
 
        .about-section {
+           //    position: relative;
+
            position: relative;
 
-           img {
-               align-self: flex-start;
-               //    align-items: 
-           }
+
        }
 
        .heading-box {
-           border: 3px solid green;
-       }
-
-       .content {
-           padding: 4rem;
-           //    z-index: 1;
-           border: 3px solid red;
+           //    border: 3px solid green;
            position: absolute;
-           width: 700px;
-
+           padding: 5rem 6rem 5rem 6rem;
            background-color: var(--clr-white);
+           width: min(50%, 700px);
+           left: 42rem;
+           top: 5rem
        }
 
        footer {
            flex-direction: row;
-           //    justify-content: center;
-           //    align-items: center;
+
        }
 
    }
