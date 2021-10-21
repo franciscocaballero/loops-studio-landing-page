@@ -152,6 +152,7 @@
        flex-direction: column;
        justify-content: center;
        align-items: center;
+       border: 3px solid red;
    }
 
    .content {
@@ -231,7 +232,7 @@
        align-items: center;
    }
 
-   @media (min-width: 40rem) {
+   @media (min-width: 80rem) {
 
        h2,
        p {
@@ -263,18 +264,19 @@
            }
        }
 
+       p {
+           font-size: 1rem;
+       }
+
 
        .header-content {
            min-height: 33vh;
        }
 
        .split {
-
            flex-direction: row;
-           //    justify-content: center;
-           //    align-items: center;
            justify-content: flex-start;
-           //    border: 3px solid yellow;
+           flex-wrap: wrap;
        }
 
        .split *> {
@@ -282,26 +284,80 @@
        }
 
        .about-section {
-           //    position: relative;
-
+           padding-top: 5rem;
            position: relative;
-
-
        }
 
        .heading-box {
-           //    border: 3px solid green;
            position: absolute;
-           padding: 5rem 6rem 5rem 6rem;
+           padding: 7rem 7rem 5rem 7rem;
            background-color: var(--clr-white);
            width: min(50%, 700px);
            left: 42rem;
-           top: 5rem
+           top: 11rem
+       }
+
+       .content>*+* {
+           margin-left: 2rem;
+
+       }
+
+       .content {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+           border: 1px solid blue;
+
+
+
+           .info-card {
+               min-width: 10vw;
+               min-height: 40rem;
+               margin-bottom: 2rem;
+               padding: 6rem 2rem 2rem 2rem;
+
+               h3 {
+                   max-width: 15rem;
+               }
+           }
+
+
+           &:nth-child(1) {
+               background: url('../../images/desktop/image-deep-earth.jpg') no-repeat center top / cover;
+           }
+
+           &:nth-child(2) {
+               background: url('../../images/desktop/image-night-arcade.jpg') no-repeat center top / cover;
+           }
+
+           &:nth-child(3) {
+               background: url('../../images/desktop/image-soccer-team.jpg') no-repeat center top / cover;
+           }
+
+           &:nth-child(4) {
+               background: url('../../images/desktop/image-grid.jpg') no-repeat center top / cover;
+           }
+
+           &:nth-child(5) {
+               background: url('../../images/desktop/image-from-above.jpg') no-repeat center top / cover;
+           }
+
+           &:nth-child(6) {
+               background: url('../../images/desktop/image-pocket-borealis.jpg') no-repeat center top / cover;
+           }
+
+           &:nth-child(7) {
+               background: url('../../images/desktop/image-curiosity.jpg') no-repeat center top / cover;
+           }
+
+           &:nth-child(8) {
+               background: url('../../images/desktop/image-fisheye.jpg') no-repeat center top / cover;
+           }
+
        }
 
        footer {
            flex-direction: row;
-
        }
 
    }
