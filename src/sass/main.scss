@@ -48,7 +48,7 @@
    li,
    p {
        font-family: var(--ff-secondary);
-       font-weight: 400;
+       font-weight: 500;
    }
 
    h1,
@@ -79,11 +79,57 @@
        color: var(--clr-grey-dark-lg);
        line-height: 2rem;
        text-align: center;
+       font-size: 1.6rem;
+   }
+
+   body {
+       overflow: scroll;
+   }
+
+   .over-follow {
+       overflow: hidden;
+       /* Firefox */
+   }
+
+   /* -------- Nav ------------*/
+   #mobile-nav {
+       padding-top: 3rem;
+       height: 100%;
+       width: 100%;
+       background-color: var(--clr-black);
+       z-index: 1;
+       position: fixed;
+       overflow: scroll;
+       overflow-x: hidden;
+       -ms-overflow-style: none;
+       /* IE and Edge */
+       scrollbar-width: none;
+   }
+
+   //    .mobile-nav-list {
+   //        display: flex;
+   //        flex-direction: column;
+   //        align-items: flex-start;
+   //        width: 100%;
+
+   //        li {
+   //            color: var(--clr-white);
+   //            text-transform: uppercase;
+   //            font-size: 3.5rem;
+   //            list-style: none;
+
+   //        }
+
+   //    }
+
+   .hidden {
+       display: none;
+
    }
 
    /* -------- buttons ------------*/
    .btn {
-       width: 50%;
+       width: 100%;
        text-align: center;
        padding: 1rem 2rem;
        font-size: 1.5rem;
@@ -92,6 +138,21 @@
        letter-spacing: 0.5rem;
        background-color: transparent;
        outline: none;
+       cursor: pointer;
+       transition: ease-in-out .2s;
+
+       &:hover {
+           color: var(--clr-white);
+           background-color: var(--clr-black);
+       }
+   }
+
+   .btn-desktop {
+       display: none;
+   }
+
+   .btn-mobile {
+       display: block;
    }
 
    img {
@@ -106,12 +167,12 @@
        width: min(90%, 90rem);
    }
 
+
    .split {
        display: flex;
        flex-direction: column;
        justify-content: center;
        align-items: center;
-       border: 3px solid red;
    }
 
    /* -------- Header  ------------*/
@@ -128,6 +189,12 @@
        }
    }
 
+   .heading-container {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
    .header-content {
        display: flex;
        flex-direction: column;
@@ -135,8 +202,21 @@
        min-height: 64vh;
    }
 
-   .heading-box {
+   .text-box {
+       margin-inline: auto;
+       width: min(100%, 30rem);
        padding: 0 0 3rem 0;
+   }
+
+   /* -------- About-section  ------------*/
+
+   .about-section {
+       padding-top: 5rem;
+       position: relative;
+
+       img {
+           margin-bottom: 5rem;
+       }
    }
 
    /* -------- Content-section  ------------*/
@@ -192,6 +272,8 @@
 
        ul {
            list-style: none;
+           padding: 0;
+
 
            li {
                margin: .5rem;
@@ -203,25 +285,58 @@
            }
        }
 
-       .social-footer--nav {
+       .footer-links {
            display: flex;
-           flex-direction: row;
            justify-content: center;
            align-items: center;
+
+           &--row {
+
+               flex-direction: row;
+           }
+
+           &--col {
+               flex-direction: column;
+           }
        }
    }
 
    /* -------- Media query ------------*/
+
    @media (min-width: 80rem) {
+       li {
+           margin: 0 0.5rem 0 0;
+           font-size: 1rem;
+           cursor: pointer;
+
+           &:after {
+               content: "";
+               padding-bottom: 0.5rem;
+               border-bottom: 1px solid transparent;
+               width: 60%;
+               display: block;
+               margin: 0 auto;
+           }
+
+           &:hover {
+               &:after {
+                   border-bottom: 1px solid var(--clr-white);
+               }
+           }
+       }
 
        /* -------- buttons ------------*/
        .btn {
-           background-color: var(--clr-black);
-           color: var(--clr-white);
-           width: 25%;
+           width: 20%;
+           padding: 1rem 1rem;
+           font-size: 1rem;
        }
 
-       .btn-main {
+       .btn-desktop {
+           display: block;
+       }
+
+       .btn-mobile {
            display: none;
        }
 
@@ -234,9 +349,7 @@
        header {
            background: url('../../images/desktop/image-hero.jpg') no-repeat center top / cover;
 
-           .icon-hamburger {
-               display: none;
-           }
+
 
            ul {
                display: flex;
@@ -248,7 +361,13 @@
            }
        }
 
+
+
        nav {
+           #hamburger {
+               display: none;
+
+           }
 
            ul>*+* {
                margin-left: 2rem;
@@ -259,6 +378,10 @@
            font-size: 1rem;
        }
 
+       .heading-container {
+           align-items: flex-start;
+           justify-content: space-between;
+       }
 
        .header-content {
            min-height: 33vh;
@@ -267,7 +390,6 @@
        .split {
            flex-direction: row;
            justify-content: space-between;
-           flex-wrap: wrap;
        }
 
        .split *> {
@@ -279,34 +401,37 @@
            position: relative;
        }
 
-       .heading-box {
+       .text-box {
            position: absolute;
            padding: 7rem 7rem 5rem 7rem;
            background-color: var(--clr-white);
-           width: min(50%, 700px);
+           width: min(55%, 700px);
            left: 42rem;
-           top: 11rem
-       }
+           top: 11rem;
 
-       .content>*+* {
-           margin-left: 2rem;
+
        }
 
        .content {
-           display: flex;
-           flex-wrap: wrap;
-           gap: 23px;
-           border: 1px solid blue;
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+           column-gap: 2rem;
+           row-gap: 2rem;
+           margin-bottom: 10rem;
 
            .info-card {
                display: flex;
                flex-direction: column;
                justify-content: flex-end;
-               margin-bottom: 0;
-               min-height: 450px;
-               width: min(25%, 18rem);
-               //    margin-bottom: 2rem;
-               //    padding: 6rem 2rem 2rem 2rem;
+               min-height: 500px;
+               margin-bottom: 0rem;
+               cursor: pointer;
+               transition: ease-in-out .5s;
+
+               &:hover {
+                   opacity: 0.5;
+                   color: var(--clr-black)
+               }
 
                &:nth-child(1) {
                    background: url('../../images/desktop/image-deep-earth.jpg') no-repeat center top / cover;
@@ -344,38 +469,29 @@
 
        footer {
            ul {
+               margin: 0;
+
                li {
                    margin: 0 0.5rem 0 0;
-
-                   &:after {
-                       content: "";
-                       padding-bottom: 0.5rem;
-                       border-bottom: 1px solid transparent;
-                       width: 60%;
-                       display: block;
-                       margin: 0 auto;
-                   }
-
-                   &:hover {
-                       &:after {
-                           border-bottom: 1px solid var(--clr-white);
-                       }
-                   }
+                   font-size: 1rem;
                }
            }
 
-           .footer-nav {
+           .footer-links-container {
                display: flex;
-               flex-direction: row;
-               border: 3px solid green;
-               justify-content: flex-start;
+               flex-direction: column;
+               justify-content: space-between;
+               min-height: 5rem;
            }
 
-           .social-footer--nav {
-               border: 3px solid blue;
-               justify-content: flex-end;
-               //    display: flex;
-               //    flex-direction: row;
+           .footer-links {
+               &--row {
+                   justify-content: flex-end;
+               }
+
+               &--col {
+                   flex-direction: row;
+               }
            }
        }
    }

@@ -13,6 +13,26 @@
 </head>
 
 <body>
+    <div id="mobile-nav" class="hidden">
+        <div class="container">
+            <nav>
+                <div>
+                    <img src="images/logo.svg" alt="Loop-studio-logo">
+                </div>
+
+                <div class="x">
+                    <img src="images/icon-close.svg" alt="">
+                </div>
+            </nav>
+            <ul class="mobile-nav-list">
+                <li>About</li>
+                <li>Careers</li>
+                <li>Events</li>
+                <li>Products</li>
+                <li>Support</li>
+            </ul>
+        </div>
+    </div>
     <header>
         <div class="container">
             <nav>
@@ -26,7 +46,7 @@
                     <li>Products</li>
                     <li>Support</li>
                 </ul>
-                <div class="icon-hamburger">
+                <div class="hamburger">
                     <img src="images/icon-hamburger.svg" alt="">
                 </div>
             </nav>
@@ -40,11 +60,11 @@
     <section>
         <div class="container">
             <div class="split about-section">
-                <div>
-                    <img src="images/desktop/image-interactive.jpg" alt="image of man with VR headset">
-                </div>
-                <div class="heading-box">
-                    <h2>The Leader In Interactive VR</h2>
+
+                <img src="images/desktop/image-interactive.jpg" alt="image of man with VR headset">
+
+                <div class="text-box">
+                    <h2 class="d">The Leader In Interactive VR</h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis officia laborum, dolor,
                         fugit
@@ -59,13 +79,15 @@
     </section>
     <section>
         <div class="container">
-            <div class="split">
+            <div class="heading-container ">
                 <h2>
                     Our Creations
                 </h2>
-                <button class="btn btn-sub">
+
+                <button class="btn btn-desktop">
                     See All
                 </button>
+
             </div>
             <div>
                 <div class="content">
@@ -96,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-main">
+            <button class="btn btn-mobile">
                 See All
             </button>
         </div>
@@ -105,11 +127,12 @@
 </body>
 <footer>
     <div class="container">
-
-        <div class="split">
-            <div>
-                <img src=" images/logo.svg" alt="Logo image">
-                <ul class="footer-nav">
+        <div class="split ">
+            <div class="footer-links-container ">
+                <div>
+                    <img src=" images/logo.svg" alt="Logo image">
+                </div>
+                <ul class="footer-links footer-links--col ">
                     <li>About</li>
                     <li>Careers</li>
                     <li>Events</li>
@@ -117,15 +140,17 @@
                     <li>Support</li>
                 </ul>
             </div>
-            <div>
+            <div class=footer-links-container>
 
-                <ul class="social-footer--nav">
+                <ul class="footer-links footer-links--row">
                     <li><img src="images/icon-facebook.svg" alt="Facebook Icon"></li>
                     <li><img src="images/icon-twitter.svg" alt="Facebook Icon"></li>
                     <li><img src="images/icon-pinterest.svg" alt="Facebook Icon"></li>
                     <li><img src="images/icon-instagram.svg" alt="Facebook Icon"></li>
                 </ul>
-                <p>© 2021 Loopstudios. All Rights Resevered</p>
+                <div>
+                    <p>© 2021 Loopstudios. All Rights Resevered</p>
+                </div>
             </div>
         </div>
     </div>
